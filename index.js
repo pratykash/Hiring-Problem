@@ -50,11 +50,11 @@ var upload = multer({
 const insertCSV = async (query) => {
     return new Promise((resolve, reject) => {
         const pool = new Pool({
-            host: "localhost",
-            user: "Pratyaksh",
-            database: "Pratyaksh",
-            password: "",
-            port: 5432
+            host: "localhost", // Change Accordingly
+            user: "Pratyaksh", // Change Accordingly
+            database: "Pratyaksh", // Change Accordingly
+            password: "", // Change Accordingly
+            port: 5432 // Change Accordingly
         });
     
         pool.query(query, async(err, res) => {

@@ -9,6 +9,8 @@ const Pool = require('pg').Pool; // Importing PostgreSQL POOL
 const fileupload = require('express-fileupload'); // Importing Express-Fileupload to upload files
 const { resolve } = require('path');
 
+console.log(__dirname);
+
 // Multer
 const storage = multer.diskStorage({
 	destination: function(req, file, cb) {
@@ -83,7 +85,7 @@ app.post('/upload', (req, res) => {
 	upload(req, res, function(err) {
 		filepath = req.file.path;
 		// MODIFY PATH IN BELOW userdir ACCORDING TO YOUR SERVER PATH
-		let userdir = '/Users/Pratyaksh/Downloads/Hiring-Problem-master/';
+		let userdir = __dirname + '/';
 		query =
 			"COPY orders (region, country, item_type, sales_channel, order_priority, order_date, order_id, ship_date, units_sold, unit_price, unit_cost, total_revenue, total_cost, total_profit) FROM '" +
 			userdir +

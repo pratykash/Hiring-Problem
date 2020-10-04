@@ -3,6 +3,7 @@ express,
 morgan,
 pg,
 express-fileupload
+(run npm install)
 
 Create DB in PostgreSQL and make a table using:
 
